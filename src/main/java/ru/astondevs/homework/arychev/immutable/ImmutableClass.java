@@ -5,7 +5,7 @@ import lombok.Getter;
 public final class ImmutableClass {
 
     @Getter
-    private String data = "someData";
+    private String data;
     @Getter
     private final MutableClonableClass mutableClonableClass;
 

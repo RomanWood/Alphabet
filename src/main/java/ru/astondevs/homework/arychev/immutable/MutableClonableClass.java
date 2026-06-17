@@ -19,10 +19,7 @@ public class MutableClonableClass implements Cloneable {
     @Override
     public MutableClonableClass clone() {
         try {
-            MutableClonableClass clone = (MutableClonableClass) super.clone();
-            // TODO: copy mutable state here, so the clone can't change the internals of the original
-
-            return clone;
+            return (MutableClonableClass) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();
         }
