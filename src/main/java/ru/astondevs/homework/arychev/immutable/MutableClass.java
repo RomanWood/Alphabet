@@ -7,7 +7,6 @@ import lombok.Setter;
  * Mutable, есть сеттер поля
  */
 public class MutableClass implements Cloneable {
-
     @Getter
     @Setter
     private String data;
