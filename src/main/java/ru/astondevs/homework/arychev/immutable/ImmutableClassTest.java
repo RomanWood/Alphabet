@@ -4,25 +4,24 @@ public class ImmutableClassTest {
 
     public static void main(String[] args) throws CloneNotSupportedException {
         String mutableData = "MutableClonableClass";
-        MutableClonableClass mutableClonableClass = new MutableClonableClass(mutableData);
+        MutableClass mutableClass = new MutableClass(mutableData);
         System.out.println("1. Создали мутабельный с данными = "
-                + mutableClonableClass.getData());
+                + mutableClass.getData());
 
-        ImmutableClass immutableClass = new ImmutableClass(mutableClonableClass, "ImmutableClass");
+        ImmutableClass immutableClass = new ImmutableClass(mutableClass, "ImmutableClass");
         System.out.println("2. Создали иммутабельный с данными мутабельного = "
-                + immutableClass.getMutableClonableClass().getData());
+                + immutableClass.getMutableClass().getData());
 
-        mutableClonableClass.setData("mutate");
+        mutableClass.setData("mutate");
         System.out.println("3. Изменили данные мутабельного по ссылке на:"
-                + mutableClonableClass.getData());
+                + mutableClass.getData());
 
-        //ссылки поменялись
         System.out.println("4. Сравнили объекты класса иммутабельного и изменённого: "
-                + immutableClass.getMutableClonableClass().equals(mutableClonableClass));
-        //значения внутри поля не равны
-        System.out.println("5. Сравнили данные поля объекта иммутабельного класса с изменёнными: "
-                + immutableClass.getMutableClonableClass().getData().equals(mutableClonableClass.getData()));
+                + immutableClass.getMutableClass().equals(mutableClass));
 
-        System.out.println("6. В иммутабельном без изменений: " + immutableClass.getMutableClonableClass().getData());
+        System.out.println("5. Сравнили данные поля объекта иммутабельного класса с изменёнными: "
+                + immutableClass.getMutableClass().getData().equals(mutableClass.getData()));
+
+        System.out.println("6. В иммутабельном без изменений: " + immutableClass.getMutableClass().getData());
     }
 }

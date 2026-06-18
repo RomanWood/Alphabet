@@ -1,16 +1,16 @@
 package ru.astondevs.homework.arychev.immutable;
 
 import lombok.Getter;
+import lombok.NonNull;
 
 public final class ImmutableClass {
-
     @Getter
     private String data;
     @Getter
-    private final MutableClonableClass mutableClonableClass;
+    private final MutableClass mutableClass;
 
-    public ImmutableClass(MutableClonableClass mutableClonableClass, String data) {
-        this.mutableClonableClass = mutableClonableClass.clone();
+    public ImmutableClass(@NonNull MutableClass mutableClass, String data) {
+        this.mutableClass = mutableClass.clone();
         this.data = data;
     }
 }

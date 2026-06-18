@@ -6,20 +6,20 @@ import lombok.Setter;
 /**
  * Mutable, есть сеттер поля
  */
-public class MutableClonableClass implements Cloneable {
+public class MutableClass implements Cloneable {
 
     @Getter
     @Setter
     private String data;
 
-    public MutableClonableClass(String data) {
+    public MutableClass(String data) {
         this.data = data;
     }
 
     @Override
-    public MutableClonableClass clone() {
+    public MutableClass clone() {
         try {
-            return (MutableClonableClass) super.clone();
+            return (MutableClass) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();
         }
