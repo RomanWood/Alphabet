@@ -1,8 +1,6 @@
 package ru.astondevs.homework.arychev.student;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
@@ -17,12 +15,26 @@ public class StudentFileProcessor {
      * @throws IOException            - ошибка IO
      * @throws ClassNotFoundException - ошибка десериализации
      */
-    protected static List<Student> read(String fileName) throws IOException, ClassNotFoundException {
+    protected static List<Student> readFrom(String fileName) throws IOException, ClassNotFoundException {
         try (InputStream inputStream = Files.newInputStream(Path.of(fileName), StandardOpenOption.DELETE_ON_CLOSE);
              ObjectInputStream objectInputStream = new ObjectInputStream(inputStream)) {
 
             //todo спросить на сессии
             return (List<Student>) objectInputStream.readObject();
+        }
+    }
+
+    /**
+     * Дозаписать в файл
+     * @param fileName - имя файла
+     * @param students - объекты
+     * @throws IOException - ошибка IO
+     */
+    protected static void writeTo(String fileName, List<Student> students) throws IOException {
+        try (OutputStream outputStream = Files.newOutputStream(Path.of(fileName), StandardOpenOption.APPEND);
+             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream)) {
+
+            objectOutputStream.writeObject(students);
         }
     }
 }
