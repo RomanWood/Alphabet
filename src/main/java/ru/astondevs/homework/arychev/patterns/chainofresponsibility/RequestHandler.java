@@ -3,7 +3,7 @@ package ru.astondevs.homework.arychev.patterns.chainofresponsibility;
 /**
  * Абстрактный класс обработчиков
  */
-abstract class RequestHandler {
+public abstract class RequestHandler {
     private RequestHandler nextHandler;
 
     public void setNextHandler(RequestHandler nextHandler) {

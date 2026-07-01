@@ -1,11 +1,14 @@
 package ru.astondevs.homework.arychev.patterns.decorator;
 
+import java.math.BigDecimal;
+
 // Конкретный компонент
-class CoffeeImpl implements Coffee {
+public class CoffeeImpl implements Coffee {
+    BigDecimal STANDARD_COST = BigDecimal.valueOf(1.0);
 
     @Override
-    public double getCost() {
-        return 1.0;
+    public BigDecimal getCost() {
+        return STANDARD_COST;
     }
     @Override
     public String getDescription() {

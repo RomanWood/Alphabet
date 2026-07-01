@@ -1,15 +1,19 @@
 package ru.astondevs.homework.arychev.patterns.decorator;
 
+import java.math.BigDecimal;
+
 // Конкретные декораторы
-class MilkDecorator extends CoffeeDecorator {
+public class MilkDecorator extends CoffeeDecorator {
+
+    BigDecimal MILK_EXTRA_COST = BigDecimal.valueOf(0.5);
 
     public MilkDecorator(Coffee decoratedCoffee) {
         super(decoratedCoffee);
     }
 
     @Override
-    public double getCost() {
-        return super.getCost() + 0.5;
+    public BigDecimal getCost() {
+        return super.getCost().add(MILK_EXTRA_COST);
     }
 
     @Override

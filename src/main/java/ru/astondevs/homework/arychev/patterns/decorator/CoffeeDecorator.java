@@ -1,7 +1,8 @@
 package ru.astondevs.homework.arychev.patterns.decorator;
 
-// Абстрактный декоратор
-abstract class CoffeeDecorator implements Coffee {
+import java.math.BigDecimal;
+
+abstract public class CoffeeDecorator implements Coffee {
 
     protected Coffee decoratedCoffee;
 
@@ -10,7 +11,7 @@ abstract class CoffeeDecorator implements Coffee {
     }
 
     @Override
-    public double getCost() {
+    public BigDecimal getCost() {
         return decoratedCoffee.getCost();
     }
 

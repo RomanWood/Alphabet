@@ -1,6 +1,6 @@
 package ru.astondevs.homework.arychev.patterns.strategy;
 
-class CreditCardPayment implements PaymentStrategy {
+public class CreditCardPayment implements PaymentStrategy {
     private final String cardNumber;
     private final String expiryDate;
 

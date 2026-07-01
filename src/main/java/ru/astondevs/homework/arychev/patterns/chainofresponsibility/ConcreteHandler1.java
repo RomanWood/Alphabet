@@ -1,6 +1,6 @@
 package ru.astondevs.homework.arychev.patterns.chainofresponsibility;
 
-class ConcreteHandler1 extends RequestHandler {
+public class ConcreteHandler1 extends RequestHandler {
     @Override
     public void handleRequest(Request request) {
         if (request.getRequestType() == RequestType.TYPE1) {

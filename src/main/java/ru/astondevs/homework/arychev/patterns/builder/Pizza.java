@@ -1,21 +1,37 @@
 package ru.astondevs.homework.arychev.patterns.builder;
 
-class Pizza {
-    private final String pizzaType;
-    private final boolean isExtraCheese;
-    private final boolean isExtraSauce;
+import lombok.ToString;
 
+@ToString
+public class Pizza {
+    private String pizzaType;
+    private boolean isExtraCheese;
+    private boolean isExtraSauce;
 
-    public Pizza(String pizzaType, boolean isExtraCheese, boolean isExtraSauce) {
-        this.pizzaType = pizzaType;
-        this.isExtraCheese = isExtraCheese;
-        this.isExtraSauce = isExtraSauce;
-    }
+    public static class Builder {
+        private final Pizza pizza;
 
-    @Override
-    public String toString() {
-        return "Pizza Type: " + pizzaType + "\n" +
-                "Extra Cheese: " + isExtraCheese + "\n" +
-                "Extra Sauce: " + isExtraSauce + "\n";
+        public Builder() {
+            this.pizza = new Pizza();
+        }
+
+        public Builder selectPizzaType(String type) {
+            pizza.pizzaType = type;
+            return this;
+        }
+
+        public Builder addExtraCheese(boolean isExtraCheese) {
+            pizza.isExtraCheese = isExtraCheese;
+            return this;
+        }
+
+        public Builder addExtraSauce(boolean isExtraSauce) {
+            pizza.isExtraSauce = isExtraSauce;
+            return this;
+        }
+
+        public Pizza build() {
+            return pizza;
+        }
     }
 }

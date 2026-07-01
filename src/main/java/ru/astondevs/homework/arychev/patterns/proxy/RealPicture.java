@@ -1,7 +1,7 @@
 package ru.astondevs.homework.arychev.patterns.proxy;
 
 // Реальный объект
-class RealPicture implements Picture {
+public class RealPicture implements Picture {
     private final String fileName;
 
     public RealPicture(String fileName) {

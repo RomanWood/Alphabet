@@ -1,5 +1,5 @@
 package ru.astondevs.homework.arychev.patterns.proxy;
 
-interface Picture {
+public interface Picture {
     void display();
 }
