@@ -1,6 +1,7 @@
 package ru.astondevs.homework.arychev.patterns.adapter;
 
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 /**
@@ -14,7 +15,7 @@ public class PaymentSystemAdapter implements PaymentProcessor {
     }
 
     @Override
-    public void processPayment(String orderId, double amount) {
+    public void processPayment(String orderId, BigDecimal amount) {
         thirdPartyPayment.makePayment(generateTransactionId(), amount);
     }
 

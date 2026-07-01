@@ -3,7 +3,7 @@ package ru.astondevs.homework.arychev.patterns.strategy;
 /**
  * СБП Payment implementation class
  */
-class SBPPayment implements PaymentStrategy {
+public class SBPPayment implements PaymentStrategy {
     private String email;
 
     public SBPPayment(String email) {

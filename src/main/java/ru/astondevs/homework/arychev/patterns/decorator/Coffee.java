@@ -1,7 +1,8 @@
 package ru.astondevs.homework.arychev.patterns.decorator;
 
-// Компонент (интерфейс)
-interface Coffee {
-    double getCost();
+import java.math.BigDecimal;
+
+public interface Coffee {
+    BigDecimal getCost();
     String getDescription();
 }

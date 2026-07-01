@@ -1,6 +1,6 @@
 package ru.astondevs.homework.arychev.patterns.proxy;
 
-class ProxyPicture implements Picture {
+public class ProxyPicture implements Picture {
     private RealPicture realPicture;
     private final String fileName;
 
